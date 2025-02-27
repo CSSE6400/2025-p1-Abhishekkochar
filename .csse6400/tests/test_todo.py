@@ -40,4 +40,3 @@ class TestTodo(unittest.TestCase):
         response = self.client.delete('/api/v1/todos/1')
         self.assertEqual(response.status_code, 200)
         self.assertEqual(response.json, TEST_TODO)
-
