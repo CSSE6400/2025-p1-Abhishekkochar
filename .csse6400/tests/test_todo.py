@@ -19,6 +19,7 @@ class TestTodo(unittest.TestCase):
     def test_get_todo(self):
         response = self.client.get('/api/v1/todos')
         self.assertEqual(response.status_code, 200)
+        print(response.json)
         self.assertEqual(response.json, [TEST_TODO])
 
     def test_get_todo_by_id(self):
