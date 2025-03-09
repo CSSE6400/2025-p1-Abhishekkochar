@@ -8,7 +8,7 @@ def health():
 
 @api.route('/todos', methods=['GET'])
 def get_todos():
-    return jsonify([{
+    return jsonify({
         "id": 1,
         "title": "Watch CSSE6400 Lecture",
         "description": "Watch the CSSE6400 lecture on ECHO360 for week 1",
@@ -16,11 +16,11 @@ def get_todos():
         "deadline_at": "2023-02-27T00:00:00",
         "created_at": "2023-02-20T00:00:00",
         "updated_at": "2023-02-20T00:00:00"
-    }.json])
+    }), 200
 
 @api.route('/todos/<int:id>', methods=['GET'])
 def get_todo(id):
-      return jsonify([{
+      return jsonify({
         "id": id,
         "title": "Watch CSSE6400 Lecture",
         "description": "Watch the CSSE6400 lecture on ECHO360 for week 1",
@@ -28,11 +28,11 @@ def get_todo(id):
         "deadline_at": "2023-02-27T00:00:00",
         "created_at": "2023-02-20T00:00:00",
         "updated_at": "2023-02-20T00:00:00"
-    }])
+    }), 200
 
 @api.route('/todos', methods=['POST'])
 def create_todo():
-    return jsonify([{
+    return jsonify({
         "id": 1,
         "title": "Watch CSSE6400 Lecture",
         "description": "Watch the CSSE6400 lecture on ECHO360 for week 1",
@@ -40,7 +40,7 @@ def create_todo():
         "deadline_at": "2023-02-27T00:00:00",
         "created_at": "2023-02-20T00:00:00",
         "updated_at": "2023-02-20T00:00:00"
-    }]), 201
+    }), 201
     
 @api.route('/todos/<int:id>', methods=['PUT'])
 def update_todo(id):
